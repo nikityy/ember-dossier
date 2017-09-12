@@ -7,7 +7,9 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  this.route('styleguide');
+  this.route('styleguide', function() {
+    this.route('item', { path: '/:componentName' });
+  });
 });
 
 export default Router;

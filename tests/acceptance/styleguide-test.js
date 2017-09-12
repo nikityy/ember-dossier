@@ -27,3 +27,12 @@ test('correct documentations list', function(assert) {
     ]);
   });
 });
+
+test('displaying correct documentation', function(assert) {
+  visit('/styleguide/some-component');
+
+  andThen(function() {
+    const content = find('.content').text().trim();
+    assert.deepEqual(content, 'kek');
+  });
+});
