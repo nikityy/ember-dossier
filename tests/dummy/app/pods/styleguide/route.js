@@ -2,17 +2,13 @@
 import Ember from 'ember';
 
 const {
-  Controller,
+  Route,
   set,
 } = Ember;
 
-export default Controller.extend({
+export default Route.extend({
 
-  items: null,
-
-  init() {
-    this._super(...arguments);
-
+  setupController(controller) {
     const { entries } = require;
     const entryKeys = Object.keys(entries);
     const components = entryKeys.filter(this._isComponent.bind(this));
@@ -20,7 +16,8 @@ export default Controller.extend({
     const items = documentedComponents.map((path) => ({
       name: this._getComponentName(path),
     }));
-    set(this, 'items', items);
+
+    set(controller, 'items', items);
   },
 
   _getComponentName(path) {

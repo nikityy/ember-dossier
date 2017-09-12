@@ -1,5 +1,10 @@
+import Ember from 'ember';
 import { test } from 'qunit';
 import moduleForAcceptance from 'dummy/tests/helpers/module-for-acceptance';
+
+const {
+  $,
+} = Ember;
 
 moduleForAcceptance('Acceptance | Styleguide');
 
