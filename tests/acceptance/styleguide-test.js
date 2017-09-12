@@ -32,7 +32,13 @@ test('displaying correct documentation', function(assert) {
   visit('/styleguide/some-component');
 
   andThen(function() {
-    const content = find('.content').text().trim();
-    assert.deepEqual(content, 'kek');
+    const content = find('.content').text().trim().split('\n');
+    assert.deepEqual(content, [
+      'Some example:',
+      '-- SOME-COMPONENT --',
+      '',
+      'Some more example:',
+      '-- SOME-COMPONENT --',
+    ]);
   });
 });

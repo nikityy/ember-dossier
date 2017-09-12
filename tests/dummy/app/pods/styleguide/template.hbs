@@ -1,11 +1,13 @@
 <div class="sidebar">
   {{#each items as |item|}}
-    <div class="item">
-      {{item.name}}
+    <div>
+      {{#link-to 'styleguide.item' item.link class='item'}}
+        {{item.name}}
+      {{/link-to}}
     </div>
   {{/each}}
 </div>
-
+<br>
 <div class="content">
   {{outlet}}
 </div>

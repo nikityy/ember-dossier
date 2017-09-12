@@ -16,6 +16,7 @@ export default Service.extend({
     const components = entryKeys.filter(this._isDocumentedComponent.bind(this));
     const items = components.map((path) => ({
       name: this._getComponentName(path),
+      link: this._getComponentName(path),
     }));
 
     return items;
