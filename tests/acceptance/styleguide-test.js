@@ -23,6 +23,7 @@ test('correct documentations list', function(assert) {
     const items = find('.item').toArray().map((x) => $(x).text().trim());
     assert.deepEqual(items, [
       'some-another-component',
+      'some-another-component/nested',
       'some-component',
     ]);
   });
@@ -39,6 +40,17 @@ test('displaying correct documentation', function(assert) {
       '',
       'Some more example:',
       '-- SOME-COMPONENT --',
+    ]);
+  });
+});
+
+test('displaying correct documentation for nested component', function(assert) {
+  visit('/styleguide/some-another-component--nested');
+
+  andThen(function() {
+    const content = find('.content').text().trim().split('\n');
+    assert.deepEqual(content, [
+      'NESTED'
     ]);
   });
 });
