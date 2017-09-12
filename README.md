@@ -1,12 +1,10 @@
 # ember-dossier
 
-This README outlines the details of collaborating on this Ember addon.
+Dossier provides an interface to build pod documentations.
 
 ## Installation
 
-* `git clone <repository-url>` this repository
-* `cd ember-dossier`
-* `npm install`
+* `ember install ember-dossier`
 
 ## Running
 
@@ -18,9 +16,3 @@ This README outlines the details of collaborating on this Ember addon.
 * `npm test` (Runs `ember try:each` to test your addon against multiple Ember versions)
 * `ember test`
 * `ember test --server`
-
-## Building
-
-* `ember build`
-
-For more information on using ember-cli, visit [https://ember-cli.com/](https://ember-cli.com/).
