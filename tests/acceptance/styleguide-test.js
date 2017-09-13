@@ -25,6 +25,7 @@ test('correct documentations list', function(assert) {
       'some-another-component',
       'some-another-component/nested',
       'some-component',
+      'some-scope/some-component',
     ]);
   });
 });
@@ -51,6 +52,17 @@ test('displaying correct documentation for nested component', function(assert) {
     const content = find('.content').text().trim().split('\n');
     assert.deepEqual(content, [
       'NESTED'
+    ]);
+  });
+});
+
+test('displaying correct documentation for scoped component', function(assert) {
+  visit('/styleguide/some-scope--some-component');
+
+  andThen(function() {
+    const content = find('.content').text().trim().split('\n');
+    assert.deepEqual(content, [
+      'SOME SCOPE\'S COMPONENT DOCUMENTATION'
     ]);
   });
 });
